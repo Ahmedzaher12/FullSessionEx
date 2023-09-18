@@ -1,0 +1,86 @@
+<div>
+    <div class="title">
+        <div class="wrapper">
+            <div class="timer-box">
+                <mat-icon class="first-icon-color">av_timer</mat-icon>
+                <span class="aligned-with-first-icon">2 minutes ago</span>
+            </div>
+
+            <div class="refresh-box">
+                <mat-icon class="icon-color">refresh</mat-icon>
+                <span class="aligned-with-icon">Refresh Data</span>
+            </div>
+        </div>
+        <div class="right-botton">
+            <div
+            class="custom-button"
+            [tooltip]="'Clicking this option will hide activity from curently active sessions.'"
+            [linkText]="'Learn More'"
+            [hideDelay]="1000"
+            position="{{toolTipPosition}}">
+            Online
+        </div>
+            <mat-icon
+                class="icon-active"
+                [tooltip]="'Export as CSV'"
+                position="{{toolTipPosition}}">
+                get_app
+            </mat-icon>
+            <mat-icon
+                class="icon-active"
+                [tooltip]="'View More'"
+                position="{{toolTipPosition}}">
+                crop_free
+            </mat-icon>
+        </div>
+    </div>
+    <div class="image-container">
+        <img
+            src="assets/playListSession.png"
+            alt>
+        <div class="font-style">Session Playlist</div>
+    </div>
+    <div class="cards-container">
+        <div
+            class="content-row"
+            *ngFor="let item of getPaginatedData()">
+            <div class="content">
+                <mat-icon>{{ item.icon }}</mat-icon>
+            </div>
+            <div class="content">
+                <a
+                    href
+                    class="icon-color">
+                    {{ item.email }}
+                </a>
+                <p class="gray-text">{{ item.text }}</p>
+            </div>
+            <div class="content">
+                <mat-icon class="play-active">{{ item.playIcon }}</mat-icon>
+            </div>
+            <div class="content">
+                <p class="icon-color">
+                    {{ item.status  }} . {{item.sessionNumber}} sessions
+                </p>
+                <p *ngIf="item.numberOfEvents ==1; else loggedOut" class="gray-text">
+                    {{ item.numberOfEvents }} Event . {{item.sessionDuration}} . {{item.sessionPath}}
+                </p>
+                <ng-template #loggedOut>
+                    <p class="gray-text">
+                        {{ item.numberOfEvents }} Events . {{item.sessionDuration}} . {{item.sessionPath}}
+                    </p>
+                </ng-template>
+            </div>
+            <div class="content last-row">
+                <p>{{ item.location }}</p>
+                <p class="gray-text">{{ item.device }}</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <mat-paginator
+            [length]="data.length"
+            [pageSize]="pageSize"
+            (page)="setPage($event)"></mat-paginator>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<div>
+    <div class="title">
+        <div class="wrapper">
+            <div class="timer-box">
+                <mat-icon class="first-icon-color">av_timer</mat-icon>
+                <span class="aligned-with-first-icon">2 minutes ago</span>
+            </div>
+
+            <div class="refresh-box">
+                <mat-icon class="icon-color">refresh</mat-icon>
+                <span class="aligned-with-icon">Refresh Data</span>
+            </div>
+        </div>
+        <div>
+            <mat-icon
+                class="icon-active"
+                [tooltip]="'Export as CSV'"
+                position="{{toolTipPosition}}">
+                get_app
+            </mat-icon>
+            <mat-icon
+                class="icon-active"
+                [tooltip]="'View More'"
+                position="{{toolTipPosition}}">
+                crop_free
+            </mat-icon>
+        </div>
+    </div>
+    <div class="image-container">
+        <img
+            src="assets/trending.jpg"
+            alt>
+        <div class="font-style">User Trends</div>
+        <div
+            class="font-style-activities"
+            [tooltip]="'View More'"
+            [hideDelay]="1000"
+            [isCustome]="true"
+            position="{{toolTipPosition}}">
+            Daily Activites
+            <mat-icon class="icon-active activities">keyboard_arrow_down</mat-icon>
+        </div>
+    </div>
+    <div class="chart-container">
+        <ngx-charts-line-chart
+            [view]="[500, 500]"
+            [results]="chartData"
+            [scheme]="chartColor"
+            [gradient]="false"
+            [roundDomains]="true"
+            [xAxisTickFormatting]="dateTickFormatting"
+            [xAxis]="true"
+            [yAxis]="true"
+            [autoScale]="true"
+            [showGridLines]="true"
+            [showXAxisLabel]="false"
+            [showYAxisLabel]="false">
+            <ng-template
+                #tooltipTemplate
+                let-model="model">
+                <div class="custom-tooltip">
+                    <div class="blue-dot"></div>
+                    <pre>    {{ getCustomToolTipNameForSingleAxies(model) }}</pre>
+                </div>
+            </ng-template>
+            <ng-template
+                #seriesTooltipTemplate
+                let-model="model">
+                <div class="custom-tooltip">
+                    <div class="blue-dot"></div>
+                    <pre>    {{ getCustomToolTipName(model) }}</pre>
+                </div>
+            </ng-template>
+        </ngx-charts-line-chart>
+    </div>
+</div>

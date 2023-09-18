@@ -1,0 +1,47 @@
+<div
+    *ngIf="!isCustome; else custome"
+    class="tooltip"
+    [ngClass]="['tooltip--'+position, 'tooltip--'+theme]"
+    [class.tooltip--visible]="visible"
+    [style.left]="left + 'px'"
+    [style.top]="top + 'px'">
+    {{tooltip}}
+    <a
+        *ngIf="linkText !== ''"
+        href="{{linkURL}}">
+        {{linkText}}
+    </a>
+</div>
+<ng-template #custome>
+    <div
+        class="custom-tooltip"
+        [ngClass]="['custom-tooltip--'+position, 'custom-tooltip--'+theme]"
+        [class.custom-tooltip--visible]="visible"
+        [style.left]="left + 'px'"
+        [style.top]="top + 'px'">
+        <div
+            *ngFor="let item of items"
+            class="checkbox-item">
+            <mat-checkbox
+                [disabled]="item.disabled"
+                [checked]="item.checked">
+                {{item.text}}
+            </mat-checkbox>
+            <div class="icon-container">
+                <i class="{{item.dotColor}}"></i>
+            </div>
+        </div>
+        <br>
+        <div
+        class="last-checkbox-item line-top">
+        <mat-checkbox
+            [disabled]="false"
+            [checked]="false">
+          Compare to prior period
+        </mat-checkbox>
+        <div class="icon-container-bottom">
+          <span class="text-content">Available when 1 trendline is plotted</span>
+        </div>
+    </div>
+    </div>
+</ng-template>
