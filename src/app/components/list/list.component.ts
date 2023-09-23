@@ -124,6 +124,19 @@ export class ListComponent {
       location: 'Ramallah',
       device: 'DESKTOP - OS X',
     },
+    {
+      icon: 'sentiment_satisfied ',
+      text: '@FULLSESSION.IO . SINCE 123122221',
+      email: 'seo@fullsession.io',
+      playIcon: 'play_circle_outline',
+      status: 'Online',
+      sessionNumber: '322',
+      numberOfEvents: 1,
+      sessionPath: '/REPLAYER/Session/INSIGHT',
+      sessionDuration: '39:03',
+      location: 'Ramallah',
+      device: 'DESKTOP - OS X',
+    },
   ];
 
   public pageSize = 5;

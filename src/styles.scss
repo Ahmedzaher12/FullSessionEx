@@ -35,13 +35,26 @@ $FullSessionApp-theme: mat.define-light-theme(
 @include mat.all-component-themes($FullSessionApp-theme);
 
 /* You can add global styles to this file, and also import other style files */
-ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
-  .position-right.tooltip-caret {
-    border-right: 7px solid gray;
-  }
 
-  background-color: gray;
+ ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
+  .tooltip-caret.position-top {
+    border-top-color: lightgray;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+  .tooltip-caret.position-left {
+    border-left-color: lightgray;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+  .tooltip-caret.position-right {
+    border-right-color: lightgray;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+  color: black;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  background-color: lightgray;
+  border: gray solid 1px;
 }
+
 
 .title {
   display: flex;
@@ -107,7 +120,7 @@ mat-icon {
 }
 
 .icon-active {
-  color: gray;
+  color: lightgrey;
 }
 
 .icon-active:hover {
@@ -136,6 +149,7 @@ p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 500;
 }
 
 html,
@@ -145,4 +159,11 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-paginator div.mat-paginator-range-actions {
+  font-weight: bold;
+  color: black;
+  font-size: 14px;
+
 }

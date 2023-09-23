@@ -13,9 +13,9 @@ export class ChartComponent implements OnInit {
   public chartData: any[] = [];
 
   public toolTipPosition = 'below';
-
+  public size =[750, 400] as [number, number];
   public chartColor = {
-    domain: ['#ADD8E6'],
+    domain: ['blue'],
   } as Color;
 
   ngOnInit() {
@@ -46,7 +46,7 @@ export class ChartComponent implements OnInit {
 
   public dateTickFormatting(val: any) {
     if (val instanceof Date) {
-      return moment(val).format('MMM-DD');
+      return moment(val).format('MM/DD');
     }
     return '';
   }

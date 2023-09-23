@@ -1,4 +1,4 @@
-<div>
+<div class="main-container">
     <div class="title">
         <div class="wrapper">
             <div class="timer-box">
@@ -11,7 +11,7 @@
                 <span class="aligned-with-icon">Refresh Data</span>
             </div>
         </div>
-        <div>
+        <div class="right-icon">
             <mat-icon
                 class="icon-active"
                 [tooltip]="'Export as CSV'"
@@ -34,16 +34,16 @@
         <div
             class="font-style-activities"
             [tooltip]="'View More'"
-            [hideDelay]="1000"
+            [hideDelay]="3000"
             [isCustome]="true"
             position="{{toolTipPosition}}">
             Daily Activites
             <mat-icon class="icon-active activities">keyboard_arrow_down</mat-icon>
         </div>
     </div>
-    <div class="chart-container">
+    <div class="chart-container" #containerRef>
         <ngx-charts-line-chart
-            [view]="[500, 500]"
+            [view]="[containerRef.offsetWidth, containerRef.offsetHeight]"
             [results]="chartData"
             [scheme]="chartColor"
             [gradient]="false"

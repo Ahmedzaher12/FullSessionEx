@@ -1,15 +1,12 @@
 .blue-dot {
     border-radius: 10px;
-    color: #add8e6;
+    color: blue;
     position: absolute;
-    background-color: #add8e6;
+    background-color: blue;
     height: 10px;
     width: 10px;
     margin-top: 4px;
 }
-
-
-
 
 .font-style-activities {
     font-size: medium;
@@ -25,7 +22,13 @@
 }
 
 .chart-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+height: 55%;
+}
+
+.right-icon mat-icon{
+width: 5px;
+}
+
+.main-container{
+    height: 100%;
 }

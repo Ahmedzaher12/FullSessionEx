@@ -31,7 +31,7 @@ export var chartData = [
         value: 17,
       },
       {
-        value: 19,
+        value: 28,
         name: new Date(2002, 4, 22) ,
       },
       {
@@ -39,7 +39,7 @@ export var chartData = [
         value: 16,
       },
       {
-        value: 22,
+        value: 15,
         name: new Date(2002, 4, 25) ,
       },
       {
